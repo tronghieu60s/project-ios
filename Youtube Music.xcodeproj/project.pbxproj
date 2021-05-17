@@ -97,12 +97,9 @@
 		D5EF03802650C39800F89662 /* Youtube Music */ = {
 			isa = PBXGroup;
 			children = (
-				D5EF03812650C39800F89662 /* AppDelegate.swift */,
+				D5EF03AF2650C5A700F89662 /* Systems */,
 				D5EF03832650C39800F89662 /* ViewController.swift */,
 				D5EF03852650C39800F89662 /* Main.storyboard */,
-				D5EF03882650C42100F89662 /* Assets.xcassets */,
-				D5EF038A2650C42100F89662 /* LaunchScreen.storyboard */,
-				D5EF038D2650C42100F89662 /* Info.plist */,
 			);
 			path = "Youtube Music";
 			sourceTree = "<group>";
@@ -123,6 +120,17 @@
 				D5EF03A32650C42600F89662 /* Info.plist */,
 			);
 			path = "Youtube MusicUITests";
+			sourceTree = "<group>";
+		};
+		D5EF03AF2650C5A700F89662 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF03882650C42100F89662 /* Assets.xcassets */,
+				D5EF038A2650C42100F89662 /* LaunchScreen.storyboard */,
+				D5EF03812650C39800F89662 /* AppDelegate.swift */,
+				D5EF038D2650C42100F89662 /* Info.plist */,
+			);
+			path = Systems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Youtube Music/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Youtube Music/Systems/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Youtube Music/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Youtube Music/Systems/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
