@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DFD8E8657282F7E10FEB337 /* Pods_Youtube_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC244C33CC98D1425F9C37 /* Pods_Youtube_Music.framework */; };
+		D54E531E26564CB700A9BBE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */; };
 		D5EF03822650C39800F89662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03812650C39800F89662 /* AppDelegate.swift */; };
 		D5EF03842650C39800F89662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03832650C39800F89662 /* ViewController.swift */; };
 		D5EF03872650C39800F89662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF03852650C39800F89662 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60EC244C33CC98D1425F9C37 /* Pods_Youtube_Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube_Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Images/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5EF037E2650C39800F89662 /* Youtube Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youtube Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF03812650C39800F89662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5EF03832650C39800F89662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		D5EF039D2650C42500F89662 /* Youtube MusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Youtube MusicUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF03A12650C42600F89662 /* Youtube_MusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube_MusicUITests.swift; sourceTree = "<group>"; };
 		D5EF03A32650C42600F89662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6AF4EB89F96C45621249AB7 /* Pods-Youtube Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube Music.release.xcconfig"; path = "Target Support Files/Pods-Youtube Music/Pods-Youtube Music.release.xcconfig"; sourceTree = "<group>"; };
+		F6BAE9067539EFF2AB56F137 /* Pods-Youtube Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube Music.debug.xcconfig"; path = "Target Support Files/Pods-Youtube Music/Pods-Youtube Music.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFD8E8657282F7E10FEB337 /* Pods_Youtube_Music.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56A1FD61F92B873AF9019501 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60EC244C33CC98D1425F9C37 /* Pods_Youtube_Music.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97F933D68357B54A3F6A924F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6BAE9067539EFF2AB56F137 /* Pods-Youtube Music.debug.xcconfig */,
+				E6AF4EB89F96C45621249AB7 /* Pods-Youtube Music.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D5EF03752650C39400F89662 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				D5EF03952650C42500F89662 /* Youtube MusicTests */,
 				D5EF03A02650C42500F89662 /* Youtube MusicUITests */,
 				D5EF037F2650C39800F89662 /* Products */,
+				97F933D68357B54A3F6A924F /* Pods */,
+				56A1FD61F92B873AF9019501 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +124,10 @@
 		D5EF03802650C39800F89662 /* Youtube Music */ = {
 			isa = PBXGroup;
 			children = (
-				D5EF03AF2650C5A700F89662 /* Systems */,
 				D5EF03832650C39800F89662 /* ViewController.swift */,
 				D5EF03852650C39800F89662 /* Main.storyboard */,
+				D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */,
+				D5EF03AF2650C5A700F89662 /* Systems */,
 			);
 			path = "Youtube Music";
 			sourceTree = "<group>";
@@ -140,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5EF03A62650C42600F89662 /* Build configuration list for PBXNativeTarget "Youtube Music" */;
 			buildPhases = (
+				3BD969D637EB8718902D63FD /* [CP] Check Pods Manifest.lock */,
 				D5EF037A2650C39700F89662 /* Sources */,
 				D5EF037B2650C39700F89662 /* Frameworks */,
 				D5EF037C2650C39700F89662 /* Resources */,
+				1F9C2310EEFACBBB8D361352 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5EF038C2650C42100F89662 /* LaunchScreen.storyboard in Resources */,
+				D54E531E26564CB700A9BBE5 /* GoogleService-Info.plist in Resources */,
 				D5EF03892650C42100F89662 /* Assets.xcassets in Resources */,
 				D5EF03872650C39800F89662 /* Main.storyboard in Resources */,
 			);
@@ -258,6 +289,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F9C2310EEFACBBB8D361352 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Youtube Music/Pods-Youtube Music-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Youtube Music/Pods-Youtube Music-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Youtube Music/Pods-Youtube Music-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BD969D637EB8718902D63FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Youtube Music-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D5EF037A2650C39700F89662 /* Sources */ = {
@@ -438,6 +511,7 @@
 		};
 		D5EF03A72650C42600F89662 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6BAE9067539EFF2AB56F137 /* Pods-Youtube Music.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -455,6 +529,7 @@
 		};
 		D5EF03A82650C42600F89662 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6AF4EB89F96C45621249AB7 /* Pods-Youtube Music.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
