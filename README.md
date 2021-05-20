@@ -18,7 +18,6 @@ Install And Usage: https://www.youtube.com/watch?v=tpsffoRh9u0.
 
 Steps:
 
-
 ```bash
 $ pod init
 ```
@@ -29,7 +28,7 @@ Just Install  ```Pod "Firebase/Database"```. (Pass To PodFile)
 $ pod install
 ```
 
-Open File .xcworkspace By Xcode To Run.
+Open File ```.xcworkspace``` By Xcode To Run.
 
 ### Fix Error When First Run Firebase
 
