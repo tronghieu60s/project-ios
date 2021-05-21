@@ -11,6 +11,7 @@
 		D54E531E26564CB700A9BBE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */; };
 		D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256F626575F9B0047CED1 /* LoginViewController.swift */; };
 		D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FC265763FD0047CED1 /* RegisterViewController.swift */; };
+		D5525700265793580047CED1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FF265793580047CED1 /* Helpers.swift */; };
 		D5EF03822650C39800F89662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03812650C39800F89662 /* AppDelegate.swift */; };
 		D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03832650C39800F89662 /* HomeViewController.swift */; };
 		D5EF03872650C39800F89662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF03852650C39800F89662 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Images/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D55256F626575F9B0047CED1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D55256FC265763FD0047CED1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D55256FF265793580047CED1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D5EF037E2650C39800F89662 /* Youtube Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youtube Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF03812650C39800F89662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5EF03832650C39800F89662 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				D5EF03832650C39800F89662 /* HomeViewController.swift */,
 				D55256F626575F9B0047CED1 /* LoginViewController.swift */,
 				D55256FC265763FD0047CED1 /* RegisterViewController.swift */,
+				D55256FF265793580047CED1 /* Helpers.swift */,
 				D5EF03852650C39800F89662 /* Main.storyboard */,
 				D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */,
 				D5EF03AF2650C5A700F89662 /* Systems */,
@@ -345,6 +348,7 @@
 				D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */,
 				D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */,
 				D5EF03822650C39800F89662 /* AppDelegate.swift in Sources */,
+				D5525700265793580047CED1 /* Helpers.swift in Sources */,
 				D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

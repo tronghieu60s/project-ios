@@ -163,6 +163,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Đăng Ký"/>
+                                <connections>
+                                    <action selector="btnRegisterAction:" destination="NTS-1i-phh" eventType="touchUpInside" id="tdW-sr-yGY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdS-ns-1Ar">
                                 <rect key="frame" x="142" y="518" width="132" height="30"/>
@@ -176,6 +179,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Jz0-GC-lAR"/>
                     </view>
+                    <connections>
+                        <outlet property="txtPassword" destination="H06-9L-Bdb" id="icV-nq-XJm"/>
+                        <outlet property="txtRePassword" destination="Q85-e9-Slw" id="5gi-vN-Xvy"/>
+                        <outlet property="txtUsername" destination="lh6-3M-lQO" id="7vO-EQ-lz5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BON-G0-tzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

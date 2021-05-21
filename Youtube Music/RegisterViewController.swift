@@ -6,10 +6,16 @@
 //  Copyright © 2021 Trong Hieu. All rights reserved.
 //
 
+import FirebaseDatabase
 import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtRePassword: UITextField!
+    
+    
     @IBAction func btnMoveLoginAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -19,8 +25,29 @@ class RegisterViewController: UIViewController {
         present(scrHome, animated: true, completion: nil)
     }
     
+    @IBAction func btnRegisterAction(_ sender: Any) {
+        if txtUsername.text == "" || txtPassword.text == "" || txtRePassword.text == "" {
+            return Helpers.showNormalAlert(message: "Các trường nhập vào là bắt buộc. Không được để trống.", view: self)
+        }
+        
+        if txtPassword.text != txtRePassword.text {
+            return Helpers.showNormalAlert(message: "Mật khẩu nhập lại không khớp. Vui lòng nhập lại.", view: self)
+        }
+        
+        Helpers.database.observe(DataEventType.value, with: { (snapshot) in
+            let value = snapshot.value as? [String : AnyObject] ?? [:]
+            print("Value: \(value)")
+        })
+        
+        print("dang ky")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Styles
+        txtPassword.isSecureTextEntry = true
+        txtRePassword.isSecureTextEntry = true
 
         // Do any additional setup after loading the view.
     }
