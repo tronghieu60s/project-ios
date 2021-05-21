@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2DFD8E8657282F7E10FEB337 /* Pods_Youtube_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EC244C33CC98D1425F9C37 /* Pods_Youtube_Music.framework */; };
 		D54E531E26564CB700A9BBE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */; };
+		D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256F626575F9B0047CED1 /* LoginViewController.swift */; };
+		D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FC265763FD0047CED1 /* RegisterViewController.swift */; };
 		D5EF03822650C39800F89662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03812650C39800F89662 /* AppDelegate.swift */; };
-		D5EF03842650C39800F89662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03832650C39800F89662 /* ViewController.swift */; };
+		D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03832650C39800F89662 /* HomeViewController.swift */; };
 		D5EF03872650C39800F89662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF03852650C39800F89662 /* Main.storyboard */; };
 		D5EF03892650C42100F89662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5EF03882650C42100F89662 /* Assets.xcassets */; };
 		D5EF038C2650C42100F89662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF038A2650C42100F89662 /* LaunchScreen.storyboard */; };
@@ -38,9 +40,11 @@
 /* Begin PBXFileReference section */
 		60EC244C33CC98D1425F9C37 /* Pods_Youtube_Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube_Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Images/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D55256F626575F9B0047CED1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D55256FC265763FD0047CED1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D5EF037E2650C39800F89662 /* Youtube Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youtube Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF03812650C39800F89662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5EF03832650C39800F89662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D5EF03832650C39800F89662 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D5EF03862650C39800F89662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5EF03882650C42100F89662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5EF038B2650C42100F89662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,7 +99,6 @@
 				F6BAE9067539EFF2AB56F137 /* Pods-Youtube Music.debug.xcconfig */,
 				E6AF4EB89F96C45621249AB7 /* Pods-Youtube Music.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -124,7 +127,9 @@
 		D5EF03802650C39800F89662 /* Youtube Music */ = {
 			isa = PBXGroup;
 			children = (
-				D5EF03832650C39800F89662 /* ViewController.swift */,
+				D5EF03832650C39800F89662 /* HomeViewController.swift */,
+				D55256F626575F9B0047CED1 /* LoginViewController.swift */,
+				D55256FC265763FD0047CED1 /* RegisterViewController.swift */,
 				D5EF03852650C39800F89662 /* Main.storyboard */,
 				D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */,
 				D5EF03AF2650C5A700F89662 /* Systems */,
@@ -337,8 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5EF03842650C39800F89662 /* ViewController.swift in Sources */,
+				D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */,
+				D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */,
 				D5EF03822650C39800F89662 /* AppDelegate.swift in Sources */,
+				D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
