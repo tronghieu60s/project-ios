@@ -78,6 +78,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Đăng Nhập"/>
+                                <connections>
+                                    <action selector="btnLoginAction:" destination="eWm-JN-yXy" eventType="touchUpInside" id="W1n-d2-qPC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usr-Kr-xet">
                                 <rect key="frame" x="214" y="806" width="171" height="30"/>
@@ -107,6 +110,10 @@
                         <viewLayoutGuide key="safeArea" id="lwP-tf-isM"/>
                     </view>
                     <navigationItem key="navigationItem" id="IVe-gK-crF"/>
+                    <connections>
+                        <outlet property="txtPassword" destination="BCa-tW-I0Q" id="ZgT-dN-JUj"/>
+                        <outlet property="txtUsername" destination="RU5-CA-jdu" id="cbh-zp-V8u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIv-y1-rIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

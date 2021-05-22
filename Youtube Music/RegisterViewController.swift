@@ -6,7 +6,6 @@
 //  Copyright © 2021 Trong Hieu. All rights reserved.
 //
 
-import FirebaseDatabase
 import UIKit
 import Promises
 
@@ -18,12 +17,11 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func btnMoveLoginAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.onMoveLogin()
     }
     
     @IBAction func btnMoveHomeAction(_ sender: Any) {
-        let scrHome = storyboard?.instantiateViewController(withIdentifier: "ScreenHome") as! HomeViewController
-        present(scrHome, animated: true, completion: nil)
+        self.onMoveHome()
     }
     
     @IBAction func btnRegisterAction(_ sender: Any) {
@@ -39,18 +37,20 @@ class RegisterViewController: UIViewController {
         let password = txtPassword.text!
         
         DispatchQueue.global().async {
-            let user: User = try! await(User.getUserByUsername(username: username))
-            if user.username != nil {
-                print(user.password)
-//                Helpers.showNormalAlert(message: "Tài khoản đã tồn tại. Vui lòng sử dụng tên khác.", view: self)
+            let getUser: User = try! await(User.getUserByUsername(username: username))
+            if getUser.username != nil {
+                DispatchQueue.main.async {
+                    Helpers.showNormalAlert(message: "Tài khoản đã tồn tại. Vui lòng sử dụng tên khác.", view: self)
+                }
             }
             else {
-                let object: [String: String] = [
-                    "user_password": password
-                ]
-                Helpers.database.child("users/\(username)").setValue(object)
-//               Helpers.showNormalAlert(message: "Dăng ký tài khoản thành công.", view: self)
-//                self.onResetForm();
+                let createUser: User = try! await(User.createUser(username: username, password: password))
+                if createUser.username != nil {
+                    DispatchQueue.main.async {
+                        Helpers.showNormalAlert(message: "Dăng ký tài khoản thành công.", view: self)
+                        self.onResetForm();
+                    }
+                }
             }
         }
     }
@@ -59,6 +59,15 @@ class RegisterViewController: UIViewController {
         txtUsername.text = "";
         txtPassword.text = "";
         txtRePassword.text = "";
+    }
+    
+    func onMoveLogin(){
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func onMoveHome(){
+        let scrHome = storyboard?.instantiateViewController(withIdentifier: "ScreenHome") as! HomeViewController
+        present(scrHome, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
