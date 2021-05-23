@@ -66,7 +66,7 @@ class RegisterViewController: UIViewController {
     }
     
     func onMoveHome(){
-        let scrHome = storyboard?.instantiateViewController(withIdentifier: "ScreenHome") as! HomeViewController
+        let scrHome = storyboard?.instantiateViewController(withIdentifier: "ScreenTabBar") as! UITabBarController
         present(scrHome, animated: true, completion: nil)
     }
     

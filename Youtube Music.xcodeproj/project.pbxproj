@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		755B7A0E87B8A8291CAC16E9 /* Pods_Youtube_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226201F2E09588CE8EB5708A /* Pods_Youtube_Music.framework */; };
-		D54E531E26564CB700A9BBE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */; };
+		D51FEBD12659EB4C00BA9E0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D51FEBD02659EB4C00BA9E0C /* GoogleService-Info.plist */; };
 		D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256F626575F9B0047CED1 /* LoginViewController.swift */; };
 		D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FC265763FD0047CED1 /* RegisterViewController.swift */; };
 		D5525700265793580047CED1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FF265793580047CED1 /* Helpers.swift */; };
@@ -43,7 +43,7 @@
 		226201F2E09588CE8EB5708A /* Pods_Youtube_Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube_Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D8AC71398B0E4E7682D6F3 /* Pods-Youtube Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube Music.release.xcconfig"; path = "Target Support Files/Pods-Youtube Music/Pods-Youtube Music.release.xcconfig"; sourceTree = "<group>"; };
 		B9CB5C0D5EB75CBA94D0B618 /* Pods-Youtube Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube Music.debug.xcconfig"; path = "Target Support Files/Pods-Youtube Music/Pods-Youtube Music.debug.xcconfig"; sourceTree = "<group>"; };
-		D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Images/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D51FEBD02659EB4C00BA9E0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Assets/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D55256F626575F9B0047CED1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D55256FC265763FD0047CED1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D55256FF265793580047CED1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -139,13 +139,13 @@
 		D5EF03802650C39800F89662 /* Youtube Music */ = {
 			isa = PBXGroup;
 			children = (
-				D55257012658D45E0047CED1 /* Models */,
 				D5EF03832650C39800F89662 /* HomeViewController.swift */,
 				D55256F626575F9B0047CED1 /* LoginViewController.swift */,
 				D55256FC265763FD0047CED1 /* RegisterViewController.swift */,
 				D55256FF265793580047CED1 /* Helpers.swift */,
 				D5EF03852650C39800F89662 /* Main.storyboard */,
-				D54E531D26564CB600A9BBE5 /* GoogleService-Info.plist */,
+				D51FEBD02659EB4C00BA9E0C /* GoogleService-Info.plist */,
+				D55257012658D45E0047CED1 /* Models */,
 				D5EF03AF2650C5A700F89662 /* Systems */,
 			);
 			path = "Youtube Music";
@@ -287,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5EF038C2650C42100F89662 /* LaunchScreen.storyboard in Resources */,
-				D54E531E26564CB700A9BBE5 /* GoogleService-Info.plist in Resources */,
+				D51FEBD12659EB4C00BA9E0C /* GoogleService-Info.plist in Resources */,
 				D5EF03892650C42100F89662 /* Assets.xcassets in Resources */,
 				D5EF03872650C39800F89662 /* Main.storyboard in Resources */,
 			);

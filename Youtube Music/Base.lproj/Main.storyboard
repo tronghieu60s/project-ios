@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Nghe Nhạc-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ScreenHome" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,36 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your url Youtube..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNf-ZA-u7k">
-                                <rect key="frame" x="72" y="354" width="270" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Nhập đường dẫn vào đây..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNf-ZA-u7k">
+                                <rect key="frame" x="46" y="352" width="322" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="url"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-hg-IGC">
-                                <rect key="frame" x="168" y="418" width="78" height="46"/>
+                                <rect key="frame" x="154" y="425" width="106" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.35409577104157175" green="0.47370462467044072" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Bắt Đầu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="btnStartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AGr-HF-gOh"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lrq-s4-JDT">
+                                <rect key="frame" x="87" y="175" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Nghe Nhạc" image="HomeIcon" id="5jG-6R-nDu"/>
                     <connections>
                         <outlet property="btnStart" destination="Xsx-hg-IGC" id="Eoe-Pr-ISH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.10144927536237" y="24.776785714285712"/>
+            <point key="canvasLocation" x="1824.6376811594205" y="24.776785714285712"/>
+        </scene>
+        <!--Người Dùng-->
+        <scene sceneID="XhY-yW-f3Q">
+            <objects>
+                <viewController id="aAp-JG-sgZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1pE-de-ebi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.28343813957969677" green="0.48912866019505019" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Ava-aG-Kdh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Người Dùng" image="UserIcon" id="oeR-Jm-aJY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VgL-JX-sQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1825" y="721"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="o1i-M9-wNZ">
@@ -214,5 +235,29 @@
             </objects>
             <point key="canvasLocation" x="-737.68115942028987" y="24.776785714285712"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="COx-yQ-kaQ">
+            <objects>
+                <tabBarController storyboardIdentifier="ScreenTabBar" automaticallyAdjustsScrollViewInsets="NO" id="e7w-nA-Nw5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HWW-zm-tFE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="QE8-8P-UQ6"/>
+                        <segue destination="aAp-JG-sgZ" kind="relationship" relationship="viewControllers" id="5Qd-ki-oKj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D79-ry-fGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="25"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="HomeIcon" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="Logo" width="333.33334350585938" height="333.33334350585938"/>
+        <image name="UserIcon" width="21.333333969116211" height="21.333333969116211"/>
+    </resources>
 </document>
