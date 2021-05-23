@@ -33,10 +33,12 @@ PODS:
   - PromisesObjC (1.2.12)
   - PromisesSwift (1.2.12):
     - PromisesObjC (= 1.2.12)
+  - youtube-ios-player-helper-swift (1.1)
 
 DEPENDENCIES:
   - Firebase/Database
   - PromisesSwift
+  - youtube-ios-player-helper-swift
 
 SPEC REPOS:
   trunk:
@@ -50,6 +52,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - PromisesSwift
+    - youtube-ios-player-helper-swift
 
 SPEC CHECKSUMS:
   Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
@@ -62,7 +65,8 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   PromisesSwift: 64085cf6e5fc1b5001f90cf31e87a1f1621fefee
+  youtube-ios-player-helper-swift: 51a3c5325317c8271d0c7985c1bbe5a252ffb2fd
 
-PODFILE CHECKSUM: cf6cd3216132d528827d4cf2e35dba8a41d2cb35
+PODFILE CHECKSUM: 95686786b38089696b55a8308616af2c09a31672
 
 COCOAPODS: 1.8.4

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Nghe Nhạc-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ScreenHome" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,6 +35,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnStartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AGr-HF-gOh"/>
+                                    <segue destination="1ks-Sh-4Fq" kind="push" id="gqC-To-1R7"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lrq-s4-JDT">
@@ -45,14 +46,81 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Nghe Nhạc" image="HomeIcon" id="5jG-6R-nDu"/>
+                    <navigationItem key="navigationItem" id="PCe-Hv-QPn"/>
                     <connections>
                         <outlet property="btnStart" destination="Xsx-hg-IGC" id="Eoe-Pr-ISH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824.6376811594205" y="24.776785714285712"/>
+            <point key="canvasLocation" x="2679.7101449275365" y="24.776785714285712"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="4OB-9B-kzN">
+            <objects>
+                <viewController id="1ks-Sh-4Fq" customClass="PlayerViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MOH-WN-dgJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlayerImage" translatesAutoresizingMaskIntoConstraints="NO" id="jAr-Dh-Wam">
+                                <rect key="frame" x="57" y="270" width="301" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="'SÀI GÒN ĐAU LÒNG QUÁ' toàn kỷ niệm chúng ta... | HỨA KIM TUYỀN x HOÀNG DUYÊN (OFFICIAL MV)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByP-mh-vvC">
+                                <rect key="frame" x="63" y="118" width="288" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Te8-rg-AeU">
+                                <rect key="frame" x="98" y="604" width="218" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFr-mN-7dB">
+                                <rect key="frame" x="35" y="608" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mV-la-zkN">
+                                <rect key="frame" x="330" y="608" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWw-hI-yl0">
+                                <rect key="frame" x="140" y="688" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="PlayIcon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpJ-gv-mVh">
+                                <rect key="frame" x="69" y="698" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="PreviousIcon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jD4-cV-Ebu">
+                                <rect key="frame" x="230" y="698" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="NextIcon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ve-MM-w4O">
+                                <rect key="frame" x="305" y="693" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="ListIcon"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="h2s-sh-kfR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OVA-w1-msb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tgh-sE-YJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3486.9565217391305" y="24.776785714285712"/>
         </scene>
         <!--Người Dùng-->
         <scene sceneID="XhY-yW-f3Q">
@@ -246,18 +314,42 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="QE8-8P-UQ6"/>
-                        <segue destination="aAp-JG-sgZ" kind="relationship" relationship="viewControllers" id="5Qd-ki-oKj"/>
+                        <segue destination="iag-5W-fna" kind="relationship" relationship="viewControllers" id="QG0-V7-UnJ"/>
+                        <segue destination="aAp-JG-sgZ" kind="relationship" relationship="viewControllers" id="oTV-hY-SGN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D79-ry-fGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="954" y="25"/>
         </scene>
+        <!--Nghe Nhạc-->
+        <scene sceneID="Acx-iX-itL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iag-5W-fna" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Nghe Nhạc" image="HomeIcon" id="WRU-8V-RjI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D0q-8k-8vK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LH0-Vi-rfP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XPC-M4-xdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769.5652173913045" y="24.776785714285712"/>
+        </scene>
     </scenes>
     <resources>
         <image name="HomeIcon" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="ListIcon" width="85.333335876464844" height="85.333335876464844"/>
         <image name="Logo" width="333.33334350585938" height="333.33334350585938"/>
+        <image name="NextIcon" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="PlayIcon" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="PlayerImage" width="360" height="450"/>
+        <image name="PreviousIcon" width="85.333335876464844" height="85.333335876464844"/>
         <image name="UserIcon" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
 </document>

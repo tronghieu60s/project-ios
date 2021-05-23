@@ -5,4 +5,6 @@ target 'Youtube Music' do
 
   pod 'PromisesSwift'
 
+  pod 'youtube-ios-player-helper-swift'
+
 end
