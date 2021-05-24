@@ -15,6 +15,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     
     
+    override func viewDidLoad() {
+        if let username: String = UserDefaults.standard.object(forKey: "ISUSERLOGGEDIN") as? String {
+            DispatchQueue.global().async {
+                let getUser: User = try! await(User.getUserByUsername(username: username))
+                Auth.userLogged = getUser
+                DispatchQueue.main.async {
+                    self.onMoveHome()
+                }
+            }
+        }
+        
+        super.viewDidLoad()
+
+        // Styles
+        txtPassword.isSecureTextEntry = true
+    }
+    
     @IBAction func btnMoveRegisterAction(_ sender: Any) {
         self.onMoveRegister()
     }
@@ -42,6 +59,8 @@ class LoginViewController: UIViewController {
                         Helpers.showNormalAlert(message: "Tài khoản hoặc mật khẩu không chính xác. Vui lòng thử lại.", view: self)
                     }
                     else {
+                    UserDefaults.standard.setValue(getUser.username, forKey: "ISUSERLOGGEDIN")
+                        Auth.userLogged = getUser
                         self.onMoveHome()
                     }
                 }
@@ -49,6 +68,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // Methods
     func onResetForm(){
         txtUsername.text = "";
         txtPassword.text = "";
@@ -63,26 +83,5 @@ class LoginViewController: UIViewController {
         let scrHome = storyboard?.instantiateViewController(withIdentifier: "ScreenTabBar") as! UITabBarController
         present(scrHome, animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Styles
-        txtPassword.isSecureTextEntry = true
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 

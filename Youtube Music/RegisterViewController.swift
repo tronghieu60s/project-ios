@@ -16,6 +16,14 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtRePassword: UITextField!
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Styles
+        txtPassword.isSecureTextEntry = true
+        txtRePassword.isSecureTextEntry = true
+    }
+    
     @IBAction func btnMoveLoginAction(_ sender: Any) {
         self.onMoveLogin()
     }
@@ -69,26 +77,4 @@ class RegisterViewController: UIViewController {
         let scrHome = storyboard?.instantiateViewController(withIdentifier: "ScreenTabBar") as! UITabBarController
         present(scrHome, animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Styles
-        txtPassword.isSecureTextEntry = true
-        txtRePassword.isSecureTextEntry = true
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
