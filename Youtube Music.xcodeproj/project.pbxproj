@@ -11,6 +11,7 @@
 		D51FEBD12659EB4C00BA9E0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D51FEBD02659EB4C00BA9E0C /* GoogleService-Info.plist */; };
 		D51FEBD7265A3C0900BA9E0C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51FEBD6265A3C0900BA9E0C /* PlayerViewController.swift */; };
 		D51FEBD9265B4A2900BA9E0C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51FEBD8265B4A2900BA9E0C /* Auth.swift */; };
+		D51FEBDB265B5BBA00BA9E0C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51FEBDA265B5BBA00BA9E0C /* UserViewController.swift */; };
 		D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256F626575F9B0047CED1 /* LoginViewController.swift */; };
 		D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FC265763FD0047CED1 /* RegisterViewController.swift */; };
 		D5525700265793580047CED1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FF265793580047CED1 /* Helpers.swift */; };
@@ -48,6 +49,7 @@
 		D51FEBD02659EB4C00BA9E0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Assets/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D51FEBD6265A3C0900BA9E0C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D51FEBD8265B4A2900BA9E0C /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		D51FEBDA265B5BBA00BA9E0C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		D55256F626575F9B0047CED1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D55256FC265763FD0047CED1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D55256FF265793580047CED1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				D55256F626575F9B0047CED1 /* LoginViewController.swift */,
 				D55256FC265763FD0047CED1 /* RegisterViewController.swift */,
 				D5EF03832650C39800F89662 /* HomeViewController.swift */,
+				D51FEBDA265B5BBA00BA9E0C /* UserViewController.swift */,
 				D51FEBD6265A3C0900BA9E0C /* PlayerViewController.swift */,
 				D5EF03852650C39800F89662 /* Main.storyboard */,
 				D51FEBD02659EB4C00BA9E0C /* GoogleService-Info.plist */,
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */,
+				D51FEBDB265B5BBA00BA9E0C /* UserViewController.swift in Sources */,
 				D51FEBD7265A3C0900BA9E0C /* PlayerViewController.swift in Sources */,
 				D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */,
 				D55257032658D4CB0047CED1 /* User.swift in Sources */,

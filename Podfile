@@ -7,4 +7,6 @@ target 'Youtube Music' do
 
   pod 'youtube-ios-player-helper-swift'
 
+  pod 'RNCryptor', '~> 5.0'
+
 end

@@ -55,7 +55,8 @@ class LoginViewController: UIViewController {
                     Helpers.showNormalAlert(message: "Tài khoản hoặc mật khẩu không chính xác. Vui lòng thử lại.", view: self)
                 }
                 else {
-                    if getUser.password! != password {
+                    let decrypt = try! Helpers.decryptString(encrypted: getUser.password!, encryptionKey: "ENCRYPTKEY")
+                    if decrypt != password {
                         Helpers.showNormalAlert(message: "Tài khoản hoặc mật khẩu không chính xác. Vui lòng thử lại.", view: self)
                     }
                     else {

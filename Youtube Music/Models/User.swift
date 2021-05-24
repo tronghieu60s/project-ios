@@ -22,6 +22,22 @@ class User {
         self.password = password
     }
     
+    static func changePasswordUser(newPass: String)-> Promise<User> {
+        return Promise<User> { resolve, reject in
+            if let username: String = UserDefaults.standard.object(forKey: "ISUSERLOGGEDIN") as? String {
+                Helpers.database.child("users").child(username).setValue(["user_password": newPass]) {
+                    error, ref in
+                    if let error = error {
+                        print("Data could not be saved: \(error).")
+                        reject(error)
+                    } else {
+                        resolve(User(username: username, password: newPass))
+                    }
+                }
+            }
+        }
+    }
+    
     static func createUser(username: String, password: String)-> Promise<User> {
         return Promise<User> { resolve, reject in
             let object: [String: String] = [

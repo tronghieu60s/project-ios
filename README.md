@@ -42,3 +42,10 @@ Fix: https://stackoverflow.com/a/63979662/9724078
 Install And Usage: https://www.youtube.com/watch?v=9KSkkn0fU3w
 
 Install ```pod "PromisesSwift"``` on PodFile.
+
+
+## Encryption / Decryption String
+
+Install And Usage: https://github.com/RNCryptor/RNCryptor
+
+Install ```pod 'RNCryptor', '~> 5.0'``` on PodFile.

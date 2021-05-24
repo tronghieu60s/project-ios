@@ -8,6 +8,7 @@
 
 import FirebaseDatabase
 import UIKit
+import RNCryptor
 
 class Helpers {
     
@@ -20,5 +21,18 @@ class Helpers {
         
         alert.addAction(btnOk)
         view.present(alert, animated: true, completion: nil)
+    }
+    
+    static func encryptString(value: String, encryptionKey: String) throws -> String {
+        let messageData = value.data(using: .utf8)!
+        let cipherData = RNCryptor.encrypt(data: messageData, withPassword: encryptionKey)
+        return cipherData.base64EncodedString()
+    }
+    
+    static func decryptString(encrypted: String, encryptionKey: String) throws -> String {
+        let encryptedData = Data.init(base64Encoded: encrypted)!
+        let decryptedData = try RNCryptor.decrypt(data: encryptedData, withPassword: encryptionKey)
+        let decryptedString = String(data: decryptedData, encoding: .utf8)!
+        return decryptedString
     }
 }

@@ -52,7 +52,8 @@ class RegisterViewController: UIViewController {
                 }
             }
             else {
-                let createUser: User = try! await(User.createUser(username: username, password: password))
+                let encrypt = try! Helpers.encryptString(value: password, encryptionKey: "ENCRYPTKEY")
+                let createUser: User = try! await(User.createUser(username: username, password: encrypt))
                 if createUser.username != nil {
                     DispatchQueue.main.async {
                         Helpers.showNormalAlert(message: "Dăng ký tài khoản thành công.", view: self)

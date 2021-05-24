@@ -33,11 +33,13 @@ PODS:
   - PromisesObjC (1.2.12)
   - PromisesSwift (1.2.12):
     - PromisesObjC (= 1.2.12)
+  - RNCryptor (5.1.0)
   - youtube-ios-player-helper-swift (1.1)
 
 DEPENDENCIES:
   - Firebase/Database
   - PromisesSwift
+  - RNCryptor (~> 5.0)
   - youtube-ios-player-helper-swift
 
 SPEC REPOS:
@@ -52,6 +54,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - PromisesSwift
+    - RNCryptor
     - youtube-ios-player-helper-swift
 
 SPEC CHECKSUMS:
@@ -65,8 +68,9 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   PromisesSwift: 64085cf6e5fc1b5001f90cf31e87a1f1621fefee
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   youtube-ios-player-helper-swift: 51a3c5325317c8271d0c7985c1bbe5a252ffb2fd
 
-PODFILE CHECKSUM: 95686786b38089696b55a8308616af2c09a31672
+PODFILE CHECKSUM: b6def15c95fbd09fd4e68c051e75cc5ab11d9667
 
 COCOAPODS: 1.8.4
