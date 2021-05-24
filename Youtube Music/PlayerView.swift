@@ -16,7 +16,6 @@ class PlayerView: UIView {
             if !videoId.isEmpty{
                 loadVideo()
             }
-            
         }
     }
     
@@ -56,8 +55,6 @@ class PlayerView: UIView {
         ytPlayerView.isUserInteractionEnabled = false
         updateTime()
     }
-    
-    
     
     @IBAction func toogleFullScreen(sender: UIButton){
         guard let rootVC = UIApplication.shared.delegate?.window??.rootViewController else {

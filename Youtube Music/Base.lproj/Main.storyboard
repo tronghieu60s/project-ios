@@ -79,14 +79,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFr-mN-7dB">
-                                <rect key="frame" x="35" y="608" width="46" height="21"/>
+                                <rect key="frame" x="20" y="608" width="61" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mV-la-zkN">
-                                <rect key="frame" x="330" y="608" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mV-la-zkN">
+                                <rect key="frame" x="330" y="608" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -96,6 +96,9 @@
                                 <rect key="frame" x="140" y="688" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="PlayIcon"/>
+                                <connections>
+                                    <action selector="playStopWithSender:" destination="1ks-Sh-4Fq" eventType="touchUpInside" id="9Lr-9v-ZLO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpJ-gv-mVh">
                                 <rect key="frame" x="69" y="698" width="30" height="30"/>
@@ -112,11 +115,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="ListIcon"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GdW-mT-Mfe" customClass="YTPlayerView" customModule="youtube_ios_player_helper_swift">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="h2s-sh-kfR"/>
                     </view>
                     <navigationItem key="navigationItem" id="OVA-w1-msb"/>
+                    <connections>
+                        <outlet property="btnPlayPause" destination="VWw-hI-yl0" id="U0N-Kx-eP9"/>
+                        <outlet property="currentTimeLabel" destination="vFr-mN-7dB" id="lJk-MU-NcA"/>
+                        <outlet property="remainingTimeLabel" destination="0mV-la-zkN" id="O8t-HE-L7w"/>
+                        <outlet property="timeSlider" destination="Te8-rg-AeU" id="voC-CN-Pqb"/>
+                        <outlet property="ytPlayerView" destination="GdW-mT-Mfe" id="IZ0-n9-iWe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgh-sE-YJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
