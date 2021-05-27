@@ -12,6 +12,9 @@
 		D51FEBD7265A3C0900BA9E0C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51FEBD6265A3C0900BA9E0C /* PlayerViewController.swift */; };
 		D51FEBD9265B4A2900BA9E0C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51FEBD8265B4A2900BA9E0C /* Auth.swift */; };
 		D51FEBDB265B5BBA00BA9E0C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51FEBDA265B5BBA00BA9E0C /* UserViewController.swift */; };
+		D54732E5265FC10F00A01FA1 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54732E4265FC10F00A01FA1 /* VideoTableViewController.swift */; };
+		D54732E7265FC1AF00A01FA1 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54732E6265FC1AF00A01FA1 /* Video.swift */; };
+		D54732E9265FC9D200A01FA1 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54732E8265FC9D200A01FA1 /* VideoTableViewCell.swift */; };
 		D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256F626575F9B0047CED1 /* LoginViewController.swift */; };
 		D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FC265763FD0047CED1 /* RegisterViewController.swift */; };
 		D5525700265793580047CED1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FF265793580047CED1 /* Helpers.swift */; };
@@ -50,6 +53,9 @@
 		D51FEBD6265A3C0900BA9E0C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D51FEBD8265B4A2900BA9E0C /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		D51FEBDA265B5BBA00BA9E0C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		D54732E4265FC10F00A01FA1 /* VideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
+		D54732E6265FC1AF00A01FA1 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		D54732E8265FC9D200A01FA1 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		D55256F626575F9B0047CED1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D55256FC265763FD0047CED1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D55256FF265793580047CED1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D55257022658D4CB0047CED1 /* User.swift */,
+				D54732E6265FC1AF00A01FA1 /* Video.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +159,8 @@
 				D5EF03832650C39800F89662 /* HomeViewController.swift */,
 				D51FEBDA265B5BBA00BA9E0C /* UserViewController.swift */,
 				D51FEBD6265A3C0900BA9E0C /* PlayerViewController.swift */,
+				D54732E8265FC9D200A01FA1 /* VideoTableViewCell.swift */,
+				D54732E4265FC10F00A01FA1 /* VideoTableViewController.swift */,
 				D5EF03852650C39800F89662 /* Main.storyboard */,
 				D51FEBD02659EB4C00BA9E0C /* GoogleService-Info.plist */,
 				D55257012658D45E0047CED1 /* Models */,
@@ -370,8 +379,11 @@
 				D51FEBD7265A3C0900BA9E0C /* PlayerViewController.swift in Sources */,
 				D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */,
 				D55257032658D4CB0047CED1 /* User.swift in Sources */,
+				D54732E9265FC9D200A01FA1 /* VideoTableViewCell.swift in Sources */,
 				D5EF03822650C39800F89662 /* AppDelegate.swift in Sources */,
 				D5525700265793580047CED1 /* Helpers.swift in Sources */,
+				D54732E7265FC1AF00A01FA1 /* Video.swift in Sources */,
+				D54732E5265FC10F00A01FA1 /* VideoTableViewController.swift in Sources */,
 				D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */,
 				D51FEBD9265B4A2900BA9E0C /* Auth.swift in Sources */,
 			);

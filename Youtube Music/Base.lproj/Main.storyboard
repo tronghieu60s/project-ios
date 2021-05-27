@@ -114,6 +114,9 @@
                                 <rect key="frame" x="305" y="693" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="ListIcon"/>
+                                <connections>
+                                    <segue destination="dWp-mk-fCa" kind="push" id="fb5-ZT-3u0"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GdW-mT-Mfe" customClass="YTPlayerView" customModule="youtube_ios_player_helper_swift">
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -135,6 +138,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgh-sE-YJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3486.9565217391305" y="24.776785714285712"/>
+        </scene>
+        <!--Video Table View Controller-->
+        <scene sceneID="nOF-qg-ILD">
+            <objects>
+                <tableViewController id="dWp-mk-fCa" customClass="VideoTableViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H5e-af-C8o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="110" id="bEX-EE-dcz" customClass="VideoTableViewCell" customModule="Youtube_Music" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bEX-EE-dcz" id="Fvz-Im-3gC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="109.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlayerImage" translatesAutoresizingMaskIntoConstraints="NO" id="Agt-zM-cYO">
+                                            <rect key="frame" x="20" y="16" width="114" height="77"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="'SÀI GÒN ĐAU LÒNG QUÁ' toàn kỷ niệm chúng ta... | HỨA KIM TUYỀN x HOÀNG DUYÊN (OFFICIAL MV)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7I7-4D-Clq">
+                                            <rect key="frame" x="159" y="16" width="235" height="49"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hứa Kim Tuyền" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nko-OJ-gPV">
+                                            <rect key="frame" x="159" y="72" width="104" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="videoAuthor" destination="nko-OJ-gPV" id="0hn-00-GQD"/>
+                                    <outlet property="videoImage" destination="Agt-zM-cYO" id="qfo-d3-85x"/>
+                                    <outlet property="videoTitle" destination="7I7-4D-Clq" id="MTt-xN-4GU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dWp-mk-fCa" id="Ama-8F-oqk"/>
+                            <outlet property="delegate" destination="dWp-mk-fCa" id="IOy-9c-uWh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="S5x-92-b1T"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T9D-KB-A0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4286.9565217391309" y="24.776785714285712"/>
         </scene>
         <!--Người Dùng-->
         <scene sceneID="XhY-yW-f3Q">
