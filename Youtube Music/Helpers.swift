@@ -9,6 +9,7 @@
 import FirebaseDatabase
 import UIKit
 import RNCryptor
+import Promises
 
 class Helpers {
     
@@ -36,19 +37,23 @@ class Helpers {
         return decryptedString
     }
     
-    static func getDataFromApi(urlString: String){
-        let url = URL(string: urlString)!
-        let request = URLRequest(url: url)
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            do {
-                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [[String:Any]] {
-                    print("Response from YouTube: \(jsonResult)")
+    static func getDataFromApi(urlString: String) -> Promise<[String: Any]> {
+        return Promise<[String: Any]> { resolve, reject in
+            guard let url = URL(string: urlString) else { return }
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if error != nil {
+                    print("Error: \(error!)")
                 }
-            } catch {
-                print(error)
+                if error == nil, let usableData=data {
+                    if let response =  try? JSONSerialization.jsonObject(with: usableData, options:[]) as? [String: Any] {
+                        resolve(response)
+                    }
+                }
             }
+            task.resume()
         }
-        task.resume()
     }
 }

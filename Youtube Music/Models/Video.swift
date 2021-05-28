@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Promises
 
 class Video {
     var videoId: String
@@ -29,7 +30,34 @@ class Video {
     
     static func loadPlaylistVideo(playlistId: String){
         let apiKey = "AIzaSyAMThGCJRRf53Pmk2SYJLPXBazsaKQOcZg"
-        let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(playlistId)&key=\(apiKey)"
-        Helpers.getDataFromApi(urlString: url)
+        let maxResults = 20
+        let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=\(maxResults)&playlistId=\(playlistId)&key=\(apiKey)"
+        DispatchQueue.global().async {
+            if let response: [String: Any] = try! await(Helpers.getDataFromApi(urlString: url)) {
+                if let items = response["items"] as? [[String: Any]] {
+                    // loop items
+                    for item in items {
+                        if let snippet = item["snippet"] as? [String: Any] {
+                            // load data item
+                            let videoId = (snippet["resourceId"] as! [String: Any])["videoId"] as! String
+                            let videoTitle = snippet["title"] as! String
+                            let videoAuthor = snippet["videoOwnerChannelTitle"] as! String
+                            
+                            let urlString: String = ((snippet["thumbnails"] as! [String: Any])["high"] as! [String: Any])["url"] as! String
+                            let urlImage: URL = URL(string: urlString)!
+                            do {
+                                // load image and add video
+                                let videoImage: Data = try Data(contentsOf: urlImage)
+                                if let video = Video(videoId: videoId, videoTitle: videoTitle, videoImage: UIImage(data: videoImage), videoAuthor: videoAuthor) {
+                                    Auth.videoList.append(video)
+                                }
+                            } catch {
+                                fatalError("Cannot Load Image")
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

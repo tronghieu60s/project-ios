@@ -10,6 +10,6 @@ import Foundation
 
 class Auth {
     static var userLogged: User!
-    static var videoList: [Video]!
+    static var videoList: [Video] = [Video]()
     static var history: [Any]!
 }

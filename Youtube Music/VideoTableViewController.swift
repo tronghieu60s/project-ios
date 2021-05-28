@@ -10,14 +10,8 @@ import UIKit
 
 class VideoTableViewController: UITableViewController {
     
-    var videoList: [Video] = [Video]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let video: Video = Video(videoId: "eee", videoTitle: "'SÀI GÒN ĐAU LÒNG QUÁ' toàn kỷ niệm chúng ta... | HỨA KIM TUYỀN x HOÀNG DUYÊN (OFFICIAL MV)", videoImage: UIImage(named: "PlayerImage"), videoAuthor: "Hứa Kim Tuyền") {
-            videoList += [video]
-        }
         
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -31,14 +25,14 @@ class VideoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return videoList.count
+        return Auth.videoList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseCell = "VideoTableViewCell"
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseCell, for: indexPath) as? VideoTableViewCell {
-            let video = videoList[indexPath.row]
+            let video = Auth.videoList[indexPath.row]
             cell.videoTitle.text = video.videoTitle
             cell.videoAuthor.text = video.videoAuthor
             cell.videoImage.image = video.videoImage
@@ -60,7 +54,7 @@ class VideoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            videoList.remove(at: indexPath.row)
+            Auth.videoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
