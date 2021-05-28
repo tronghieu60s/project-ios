@@ -26,4 +26,10 @@ class Video {
         self.videoImage = videoImage
         self.videoAuthor = videoAuthor
     }
+    
+    static func loadPlaylistVideo(playlistId: String){
+        let apiKey = "AIzaSyAMThGCJRRf53Pmk2SYJLPXBazsaKQOcZg"
+        let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(playlistId)&key=\(apiKey)"
+        Helpers.getDataFromApi(urlString: url)
+    }
 }

@@ -38,6 +38,8 @@ class PlayerViewController: UIViewController {
         super.viewDidLoad()
         
         self.videoId = "-sdYvmpy2cg"
+        
+        Video.loadPlaylistVideo(playlistId: "PL8ZKm5nFCZHSugD3_bEfGTuHA1X7nFNmR")
 
         // Do any additional setup after loading the view.
     }

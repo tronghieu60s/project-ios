@@ -35,4 +35,20 @@ class Helpers {
         let decryptedString = String(data: decryptedData, encoding: .utf8)!
         return decryptedString
     }
+    
+    static func getDataFromApi(urlString: String){
+        let url = URL(string: urlString)!
+        let request = URLRequest(url: url)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            do {
+                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [[String:Any]] {
+                    print("Response from YouTube: \(jsonResult)")
+                }
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+    }
 }
