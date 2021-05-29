@@ -25,14 +25,14 @@ class VideoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Auth.videoList.count
+        return Player.videoList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseCell = "VideoTableViewCell"
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseCell, for: indexPath) as? VideoTableViewCell {
-            let video = Auth.videoList[indexPath.row]
+            let video = Player.videoList[indexPath.row]
             cell.videoTitle.text = video.videoTitle
             cell.videoAuthor.text = video.videoAuthor
             cell.videoImage.image = video.videoImage
@@ -54,7 +54,7 @@ class VideoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            Auth.videoList.remove(at: indexPath.row)
+            Player.videoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

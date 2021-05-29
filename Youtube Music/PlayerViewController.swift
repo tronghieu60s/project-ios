@@ -8,6 +8,7 @@
 
 import UIKit
 import youtube_ios_player_helper_swift
+import Promises
 
 class PlayerViewController: UIViewController {
     
@@ -19,8 +20,28 @@ class PlayerViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var videoTitle: UILabel!
+    @IBOutlet weak var videoImage: UIImageView!
+    @IBOutlet weak var videoAuthor: UILabel!
+    @IBOutlet weak var numOfList: UILabel!
     @IBOutlet weak var ytPlayerView: YTPlayerView!
     @IBOutlet weak var btnPlayPause: UIButton!
+    @IBAction func btnNextAction(_ sender: Any) {
+        if(Player.nowPlaying < Player.videoList.count - 1) {
+            Player.nowPlaying += 1
+        }else {
+            Player.nowPlaying = 0
+        }
+        self.loadDataView()
+    }
+    @IBAction func btnPreviousAction(_ sender: Any) {
+        if(Player.nowPlaying != 0) {
+            Player.nowPlaying -= 1
+        } else {
+            Player.nowPlaying = Player.videoList.count - 1
+        }
+        self.loadDataView()
+    }
     
     @IBOutlet weak var timeSlider: UISlider!{
         didSet{
@@ -35,13 +56,29 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var remainingTimeLabel: UILabel!
     
     override func viewDidLoad() {
+        DispatchQueue.global().async {
+            let _ = try! await(Video.loadPlaylistVideo(playlistId: "PL8ZKm5nFCZHSugD3_bEfGTuHA1X7nFNmR"))
+            DispatchQueue.main.async {
+                self.loadDataView()
+            }
+        }
+        
         super.viewDidLoad()
         
-        self.videoId = "-sdYvmpy2cg"
-        
-        Video.loadPlaylistVideo(playlistId: "PL8ZKm5nFCZHSugD3_bEfGTuHA1X7nFNmR")
-
-        // Do any additional setup after loading the view.
+        videoImage.layer.borderWidth = 1.0
+        videoImage.layer.cornerRadius = videoImage.frame.size.width / 2
+        videoImage.clipsToBounds = true
+    }
+    
+    private func loadDataView() {
+        if Player.videoList.count > 0 {
+            let video = Player.videoList[Player.nowPlaying]
+            self.numOfList.text = "\(Player.nowPlaying + 1)/\(Player.videoList.count)"
+            self.videoId = video.videoId
+            self.videoTitle.text = video.videoTitle
+            self.videoImage.image = video.videoImage
+            self.videoAuthor.text = video.videoAuthor
+        }
     }
     
     @IBAction func playStop(sender: UIButton){

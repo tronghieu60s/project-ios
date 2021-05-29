@@ -19,6 +19,7 @@
 		D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FC265763FD0047CED1 /* RegisterViewController.swift */; };
 		D5525700265793580047CED1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55256FF265793580047CED1 /* Helpers.swift */; };
 		D55257032658D4CB0047CED1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55257022658D4CB0047CED1 /* User.swift */; };
+		D55CE49C2661F881006BDCE9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55CE49B2661F881006BDCE9 /* Player.swift */; };
 		D5EF03822650C39800F89662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03812650C39800F89662 /* AppDelegate.swift */; };
 		D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03832650C39800F89662 /* HomeViewController.swift */; };
 		D5EF03872650C39800F89662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF03852650C39800F89662 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		D55256FC265763FD0047CED1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D55256FF265793580047CED1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D55257022658D4CB0047CED1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D55CE49B2661F881006BDCE9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D5EF037E2650C39800F89662 /* Youtube Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youtube Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF03812650C39800F89662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5EF03832650C39800F89662 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				D51FEBD8265B4A2900BA9E0C /* Auth.swift */,
 				D55256FF265793580047CED1 /* Helpers.swift */,
+				D55CE49B2661F881006BDCE9 /* Player.swift */,
 				D55256F626575F9B0047CED1 /* LoginViewController.swift */,
 				D55256FC265763FD0047CED1 /* RegisterViewController.swift */,
 				D5EF03832650C39800F89662 /* HomeViewController.swift */,
@@ -379,6 +382,7 @@
 				D51FEBD7265A3C0900BA9E0C /* PlayerViewController.swift in Sources */,
 				D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */,
 				D55257032658D4CB0047CED1 /* User.swift in Sources */,
+				D55CE49C2661F881006BDCE9 /* Player.swift in Sources */,
 				D54732E9265FC9D200A01FA1 /* VideoTableViewCell.swift in Sources */,
 				D5EF03822650C39800F89662 /* AppDelegate.swift in Sources */,
 				D5525700265793580047CED1 /* Helpers.swift in Sources */,

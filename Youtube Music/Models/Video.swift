@@ -28,12 +28,13 @@ class Video {
         self.videoAuthor = videoAuthor
     }
     
-    static func loadPlaylistVideo(playlistId: String){
+    static func loadPlaylistVideo(playlistId: String) -> Promise<[Video]>{
         let apiKey = "AIzaSyAMThGCJRRf53Pmk2SYJLPXBazsaKQOcZg"
         let maxResults = 20
         let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=\(maxResults)&playlistId=\(playlistId)&key=\(apiKey)"
+        return Promise<[Video]> { resolve, reject in
         DispatchQueue.global().async {
-            if let response: [String: Any] = try! await(Helpers.getDataFromApi(urlString: url)) {
+            if let response: [String: Any] = try! await(Helpers.getDataFromApi(urlString: url)) as [String: Any] {
                 if let items = response["items"] as? [[String: Any]] {
                     // loop items
                     for item in items {
@@ -49,15 +50,17 @@ class Video {
                                 // load image and add video
                                 let videoImage: Data = try Data(contentsOf: urlImage)
                                 if let video = Video(videoId: videoId, videoTitle: videoTitle, videoImage: UIImage(data: videoImage), videoAuthor: videoAuthor) {
-                                    Auth.videoList.append(video)
+                                    Player.videoList.append(video)
                                 }
                             } catch {
                                 fatalError("Cannot Load Image")
                             }
                         }
                     }
+                    resolve(Player.videoList)
                 }
             }
+        }
         }
     }
 }

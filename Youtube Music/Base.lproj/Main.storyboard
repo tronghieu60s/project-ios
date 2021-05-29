@@ -64,36 +64,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlayerImage" translatesAutoresizingMaskIntoConstraints="NO" id="jAr-Dh-Wam">
-                                <rect key="frame" x="57" y="270" width="301" height="267"/>
+                                <rect key="frame" x="57" y="239" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="'SÀI GÒN ĐAU LÒNG QUÁ' toàn kỷ niệm chúng ta... | HỨA KIM TUYỀN x HOÀNG DUYÊN (OFFICIAL MV)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByP-mh-vvC">
-                                <rect key="frame" x="63" y="118" width="288" height="130"/>
+                                <rect key="frame" x="63" y="131" width="288" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Te8-rg-AeU">
-                                <rect key="frame" x="98" y="604" width="218" height="30"/>
+                                <rect key="frame" x="98" y="622" width="218" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFr-mN-7dB">
-                                <rect key="frame" x="20" y="608" width="61" height="21"/>
+                                <rect key="frame" x="20" y="626" width="61" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mV-la-zkN">
-                                <rect key="frame" x="330" y="608" width="64" height="21"/>
+                                <rect key="frame" x="330" y="626" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWw-hI-yl0">
-                                <rect key="frame" x="140" y="688" width="50" height="50"/>
+                                <rect key="frame" x="140" y="706" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="PlayIcon"/>
                                 <connections>
@@ -101,17 +101,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpJ-gv-mVh">
-                                <rect key="frame" x="69" y="698" width="30" height="30"/>
+                                <rect key="frame" x="69" y="716" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="PreviousIcon"/>
+                                <connections>
+                                    <action selector="btnPreviousAction:" destination="1ks-Sh-4Fq" eventType="touchUpInside" id="sRZ-NA-oqt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jD4-cV-Ebu">
-                                <rect key="frame" x="230" y="698" width="30" height="30"/>
+                                <rect key="frame" x="230" y="716" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="NextIcon"/>
+                                <connections>
+                                    <action selector="btnNextAction:" destination="1ks-Sh-4Fq" eventType="touchUpInside" id="sZu-je-gi8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ve-MM-w4O">
-                                <rect key="frame" x="305" y="693" width="40" height="40"/>
+                                <rect key="frame" x="305" y="711" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="ListIcon"/>
                                 <connections>
@@ -122,6 +128,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hứa Kim Tuyền" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQ4-CU-BXD">
+                                <rect key="frame" x="117" y="560" width="181" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeL-1V-jW2">
+                                <rect key="frame" x="181" y="113" width="52" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="h2s-sh-kfR"/>
@@ -130,8 +150,12 @@
                     <connections>
                         <outlet property="btnPlayPause" destination="VWw-hI-yl0" id="U0N-Kx-eP9"/>
                         <outlet property="currentTimeLabel" destination="vFr-mN-7dB" id="lJk-MU-NcA"/>
+                        <outlet property="numOfList" destination="aeL-1V-jW2" id="YtJ-jZ-bMk"/>
                         <outlet property="remainingTimeLabel" destination="0mV-la-zkN" id="O8t-HE-L7w"/>
                         <outlet property="timeSlider" destination="Te8-rg-AeU" id="voC-CN-Pqb"/>
+                        <outlet property="videoAuthor" destination="YQ4-CU-BXD" id="qWR-OH-8gj"/>
+                        <outlet property="videoImage" destination="jAr-Dh-Wam" id="7nq-U4-zmz"/>
+                        <outlet property="videoTitle" destination="ByP-mh-vvC" id="8wi-Rp-ELG"/>
                         <outlet property="ytPlayerView" destination="GdW-mT-Mfe" id="IZ0-n9-iWe"/>
                     </connections>
                 </viewController>
