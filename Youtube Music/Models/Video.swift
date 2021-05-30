@@ -34,6 +34,7 @@ class Video {
         let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=\(maxResults)&playlistId=\(playlistId)&key=\(apiKey)"
         return Promise<[Video]> { resolve, reject in
             DispatchQueue.global().async {
+                Player.videoList = [Video]()
                 if let response: [String: Any] = try! await(Helpers.getDataFromApi(urlString: url)) as [String: Any] {
                     if let items = response["items"] as? [[String: Any]] {
                         // loop items
