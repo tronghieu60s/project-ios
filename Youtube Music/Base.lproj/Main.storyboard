@@ -35,13 +35,17 @@
                                 </state>
                                 <connections>
                                     <action selector="btnStartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AGr-HF-gOh"/>
-                                    <segue destination="1ks-Sh-4Fq" kind="push" id="gqC-To-1R7"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lrq-s4-JDT">
                                 <rect key="frame" x="87" y="175" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="B9S-Xn-tAt">
+                                <rect key="frame" x="189" y="479" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -49,6 +53,8 @@
                     <navigationItem key="navigationItem" id="PCe-Hv-QPn"/>
                     <connections>
                         <outlet property="btnStart" destination="Xsx-hg-IGC" id="Eoe-Pr-ISH"/>
+                        <outlet property="spinnerLoad" destination="B9S-Xn-tAt" id="OJo-6Y-C5L"/>
+                        <outlet property="txtInput" destination="uNf-ZA-u7k" id="mRP-Wi-BFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,7 +64,7 @@
         <!--Player View Controller-->
         <scene sceneID="4OB-9B-kzN">
             <objects>
-                <viewController id="1ks-Sh-4Fq" customClass="PlayerViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScreenPlayer" id="1ks-Sh-4Fq" customClass="PlayerViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOH-WN-dgJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

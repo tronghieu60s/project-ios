@@ -56,13 +56,7 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var remainingTimeLabel: UILabel!
     
     override func viewDidLoad() {
-        DispatchQueue.global().async {
-            let _ = try! await(Video.loadPlaylistVideo(playlistId: "PL8ZKm5nFCZHSugD3_bEfGTuHA1X7nFNmR"))
-            DispatchQueue.main.async {
-                self.loadDataView()
-            }
-        }
-        
+        self.loadDataView()
         super.viewDidLoad()
         
         videoImage.layer.borderWidth = 1.0
