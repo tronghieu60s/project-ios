@@ -29,9 +29,8 @@ class Video {
     }
     
     static func loadPlaylistVideo(playlistId: String) -> Promise<[Video]>{
-        let apiKey = "AIzaSyAMThGCJRRf53Pmk2SYJLPXBazsaKQOcZg"
-        let maxResults = 50
-        let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=\(maxResults)&playlistId=\(playlistId)&key=\(apiKey)"
+        let apiKey = Bundle.main.object(forInfoDictionaryKey: "Youtube API Key")
+        let url = "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=\(playlistId)&key=\(apiKey!)"
         return Promise<[Video]> { resolve, reject in
             DispatchQueue.global().async {
                 Player.videoList = [Video]()

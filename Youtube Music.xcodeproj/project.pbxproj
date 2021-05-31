@@ -205,9 +205,9 @@
 		D5F7D2632664A86300AF0ABC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D5F7D2662664A8ED00AF0ABC /* Screen */,
 				D5F7D2642664A87500AF0ABC /* Auth */,
-				D5F7D2652664A88A00AF0ABC /* TableView */,
+				D5F7D2662664A8ED00AF0ABC /* Screen */,
+				D5F7D2652664A88A00AF0ABC /* Table View */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		D5F7D2652664A88A00AF0ABC /* TableView */ = {
+		D5F7D2652664A88A00AF0ABC /* Table View */ = {
 			isa = PBXGroup;
 			children = (
 				D54732E8265FC9D200A01FA1 /* VideoTableViewCell.swift */,
@@ -229,7 +229,7 @@
 				D5F7D2672664AC7A00AF0ABC /* PlaylistTableViewCell.swift */,
 				D5F7D2692664ACAA00AF0ABC /* PlaylistTableViewController.swift */,
 			);
-			path = TableView;
+			path = "Table View";
 			sourceTree = "<group>";
 		};
 		D5F7D2662664A8ED00AF0ABC /* Screen */ = {
