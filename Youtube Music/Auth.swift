@@ -10,5 +10,5 @@ import Foundation
 
 class Auth {
     static var userLogged: User!
-    static var history: [Any]!
+    static var playlistList: [Playlist] = [Playlist]()
 }

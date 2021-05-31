@@ -44,6 +44,9 @@ class HomeViewController: UIViewController {
         
         // Styles
         btnStart.layer.cornerRadius = 10
+        
+        // Load Playlist
+        let _ = Playlist.loadPlaylistsDetail(playlistIds: "PL8ZKm5nFCZHSugD3_bEfGTuHA1X7nFNmR,PLoFAnSOLY29_ENnCZNOFOgFkGZ2hW_JZs")
     }
     
 }

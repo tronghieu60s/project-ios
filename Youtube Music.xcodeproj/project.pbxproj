@@ -27,6 +27,9 @@
 		D5EF038C2650C42100F89662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5EF038A2650C42100F89662 /* LaunchScreen.storyboard */; };
 		D5EF03972650C42500F89662 /* Youtube_MusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03962650C42500F89662 /* Youtube_MusicTests.swift */; };
 		D5EF03A22650C42600F89662 /* Youtube_MusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF03A12650C42600F89662 /* Youtube_MusicUITests.swift */; };
+		D5F7D2622664A5DF00AF0ABC /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F7D2612664A5DF00AF0ABC /* Playlist.swift */; };
+		D5F7D2682664AC7A00AF0ABC /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F7D2672664AC7A00AF0ABC /* PlaylistTableViewCell.swift */; };
+		D5F7D26A2664ACAA00AF0ABC /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F7D2692664ACAA00AF0ABC /* PlaylistTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		D5EF039D2650C42500F89662 /* Youtube MusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Youtube MusicUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5EF03A12650C42600F89662 /* Youtube_MusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube_MusicUITests.swift; sourceTree = "<group>"; };
 		D5EF03A32650C42600F89662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5F7D2612664A5DF00AF0ABC /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		D5F7D2672664AC7A00AF0ABC /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		D5F7D2692664ACAA00AF0ABC /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 			children = (
 				D55257022658D4CB0047CED1 /* User.swift */,
 				D54732E6265FC1AF00A01FA1 /* Video.swift */,
+				D5F7D2612664A5DF00AF0ABC /* Playlist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,17 +162,11 @@
 			isa = PBXGroup;
 			children = (
 				D51FEBD8265B4A2900BA9E0C /* Auth.swift */,
-				D55256FF265793580047CED1 /* Helpers.swift */,
 				D55CE49B2661F881006BDCE9 /* Player.swift */,
-				D55256F626575F9B0047CED1 /* LoginViewController.swift */,
-				D55256FC265763FD0047CED1 /* RegisterViewController.swift */,
-				D5EF03832650C39800F89662 /* HomeViewController.swift */,
-				D51FEBDA265B5BBA00BA9E0C /* UserViewController.swift */,
-				D51FEBD6265A3C0900BA9E0C /* PlayerViewController.swift */,
-				D54732E8265FC9D200A01FA1 /* VideoTableViewCell.swift */,
-				D54732E4265FC10F00A01FA1 /* VideoTableViewController.swift */,
+				D55256FF265793580047CED1 /* Helpers.swift */,
 				D5EF03852650C39800F89662 /* Main.storyboard */,
 				D51FEBD02659EB4C00BA9E0C /* GoogleService-Info.plist */,
+				D5F7D2632664A86300AF0ABC /* Components */,
 				D55257012658D45E0047CED1 /* Models */,
 				D5EF03AF2650C5A700F89662 /* Systems */,
 			);
@@ -199,6 +200,46 @@
 				D5EF038D2650C42100F89662 /* Info.plist */,
 			);
 			path = Systems;
+			sourceTree = "<group>";
+		};
+		D5F7D2632664A86300AF0ABC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D5F7D2662664A8ED00AF0ABC /* Screen */,
+				D5F7D2642664A87500AF0ABC /* Auth */,
+				D5F7D2652664A88A00AF0ABC /* TableView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D5F7D2642664A87500AF0ABC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D55256F626575F9B0047CED1 /* LoginViewController.swift */,
+				D55256FC265763FD0047CED1 /* RegisterViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D5F7D2652664A88A00AF0ABC /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				D54732E8265FC9D200A01FA1 /* VideoTableViewCell.swift */,
+				D54732E4265FC10F00A01FA1 /* VideoTableViewController.swift */,
+				D5F7D2672664AC7A00AF0ABC /* PlaylistTableViewCell.swift */,
+				D5F7D2692664ACAA00AF0ABC /* PlaylistTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		D5F7D2662664A8ED00AF0ABC /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF03832650C39800F89662 /* HomeViewController.swift */,
+				D51FEBDA265B5BBA00BA9E0C /* UserViewController.swift */,
+				D51FEBD6265A3C0900BA9E0C /* PlayerViewController.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +421,9 @@
 				D55256F726575F9B0047CED1 /* LoginViewController.swift in Sources */,
 				D51FEBDB265B5BBA00BA9E0C /* UserViewController.swift in Sources */,
 				D51FEBD7265A3C0900BA9E0C /* PlayerViewController.swift in Sources */,
+				D5F7D2622664A5DF00AF0ABC /* Playlist.swift in Sources */,
 				D5EF03842650C39800F89662 /* HomeViewController.swift in Sources */,
+				D5F7D2682664AC7A00AF0ABC /* PlaylistTableViewCell.swift in Sources */,
 				D55257032658D4CB0047CED1 /* User.swift in Sources */,
 				D55CE49C2661F881006BDCE9 /* Player.swift in Sources */,
 				D54732E9265FC9D200A01FA1 /* VideoTableViewCell.swift in Sources */,
@@ -390,6 +433,7 @@
 				D54732E5265FC10F00A01FA1 /* VideoTableViewController.swift in Sources */,
 				D55256FD265763FD0047CED1 /* RegisterViewController.swift in Sources */,
 				D51FEBD9265B4A2900BA9E0C /* Auth.swift in Sources */,
+				D5F7D26A2664ACAA00AF0ABC /* PlaylistTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
