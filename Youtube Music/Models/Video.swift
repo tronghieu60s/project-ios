@@ -35,6 +35,7 @@ class Video {
         return Promise<[Video]> { resolve, reject in
             DispatchQueue.global().async {
                 Player.videoList = [Video]()
+                Player.nowPlaying = 0
                 if let response: [String: Any] = try! await(Helpers.getDataFromApi(urlString: url)) as [String: Any] {
                     if let items = response["items"] as? [[String: Any]] {
                         // loop items

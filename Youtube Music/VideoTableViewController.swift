@@ -10,6 +10,8 @@ import UIKit
 
 class VideoTableViewController: UITableViewController {
     
+    var callback : (()->())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +57,8 @@ class VideoTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Player.nowPlaying = indexPath.row
+        callback?()
+        navigationController?.popViewController(animated: true)
     }
     
     /*

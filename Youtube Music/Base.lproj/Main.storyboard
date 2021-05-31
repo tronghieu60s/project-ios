@@ -127,7 +127,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="ListIcon"/>
                                 <connections>
-                                    <segue destination="dWp-mk-fCa" kind="push" id="fb5-ZT-3u0"/>
+                                    <action selector="btnListAction:" destination="1ks-Sh-4Fq" eventType="touchUpInside" id="Kl4-Nt-bZY"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GdW-mT-Mfe" customClass="YTPlayerView" customModule="youtube_ios_player_helper_swift">
@@ -172,7 +172,7 @@
         <!--Video Table View Controller-->
         <scene sceneID="nOF-qg-ILD">
             <objects>
-                <tableViewController id="dWp-mk-fCa" customClass="VideoTableViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ScreenPlaylistVideo" id="dWp-mk-fCa" customClass="VideoTableViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H5e-af-C8o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

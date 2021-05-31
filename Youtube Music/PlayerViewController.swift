@@ -42,6 +42,13 @@ class PlayerViewController: UIViewController {
         }
         self.loadDataView()
     }
+    @IBAction func btnListAction(_ sender: Any) {
+        let scrPlaylist = storyboard?.instantiateViewController(withIdentifier: "ScreenPlaylistVideo") as! VideoTableViewController
+        scrPlaylist.callback = {
+            self.loadDataView()
+        }
+        navigationController?.pushViewController(scrPlaylist, animated: true)
+    }
     
     @IBOutlet weak var timeSlider: UISlider!{
         didSet{

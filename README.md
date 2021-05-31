@@ -49,3 +49,7 @@ Install ```pod "PromisesSwift"``` on PodFile.
 Install And Usage: https://github.com/RNCryptor/RNCryptor
 
 Install ```pod 'RNCryptor', '~> 5.0'``` on PodFile.
+
+## Pass Data To Previous View
+
+Solution: https://stackoverflow.com/a/49206460/9724078
