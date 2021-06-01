@@ -18,7 +18,10 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblUsername.text = "@\(Auth.userLogged.username!)"
+        
+        if Auth.userLogged.username != nil {
+            lblUsername.text = "@\(Auth.userLogged.username!)"
+        }
         
         txtOldPass.isSecureTextEntry = true
         txtNewPass.isSecureTextEntry = true
@@ -26,7 +29,7 @@ class UserViewController: UIViewController {
     }
 
     @IBAction func btnLogoutAction(_ sender: Any) {
-        Auth.userLogged = nil
+        Auth.userLogged = User()
         UserDefaults.standard.set(nil, forKey: "ISUSERLOGGEDIN")
         navigationController?.popToRootViewController(animated: true)
     }
@@ -46,12 +49,14 @@ class UserViewController: UIViewController {
         }
         
         DispatchQueue.global().async {
-            let encrypt = try! Helpers.encryptString(value: newPass, encryptionKey: "ENCRYPTKEY")
-            let getUser: User = try! await(User.changePasswordUser(newPass: encrypt))
-            Auth.userLogged = getUser
-            DispatchQueue.main.async {
-                Helpers.showNormalAlert(message: "Thay đổi mật khẩu thành công.", view: self)
-                self.onResetForm()
+            if let username: String = UserDefaults.standard.object(forKey: "ISUSERLOGGEDIN") as? String {
+                let encrypt = try! Helpers.encryptString(value: newPass, encryptionKey: "ENCRYPTKEY")
+                let _ = try! await(User.updateUserPassword(pass: encrypt))
+                Auth.userLogged = try! await(User.getUserByUsername(username: username))
+                DispatchQueue.main.async {
+                    Helpers.showNormalAlert(message: "Thay đổi mật khẩu thành công.", view: self)
+                    self.onResetForm()
+                }
             }
         }
     }

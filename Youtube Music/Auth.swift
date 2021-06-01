@@ -9,6 +9,6 @@
 import Foundation
 
 class Auth {
-    static var userLogged: User!
+    static var userLogged: User! = User()
     static var playlistList: [Playlist] = [Playlist]()
 }

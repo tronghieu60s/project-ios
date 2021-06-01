@@ -12,26 +12,42 @@ import Promises
 class User {
     var username: String!
     var password: String!
+    var playlist: String = ""
     
-    init() {
-        
-    }
+    init() {}
     
-    init(username: String, password: String) {
+    init(username: String, password: String, playlist: String) {
         self.username = username
         self.password = password
+        self.playlist = playlist
     }
     
-    static func changePasswordUser(newPass: String)-> Promise<User> {
-        return Promise<User> { resolve, reject in
+    static func updateUserPassword(pass: String)-> Promise<Bool> {
+        return Promise<Bool> { resolve, reject in
             if let username: String = UserDefaults.standard.object(forKey: "ISUSERLOGGEDIN") as? String {
-                Helpers.database.child("users").child(username).setValue(["user_password": newPass]) {
+                Helpers.database.child("users").child(username).setValue(["user_password": pass]) {
                     error, ref in
                     if let error = error {
                         print("Data could not be saved: \(error).")
                         reject(error)
                     } else {
-                        resolve(User(username: username, password: newPass))
+                        resolve(true)
+                    }
+                }
+            }
+        }
+    }
+    
+    static func updateUserPlaylist(playlist: String) -> Promise<Bool> {
+        return Promise<Bool> { resolve, reject in
+            if let username: String = UserDefaults.standard.object(forKey: "ISUSERLOGGEDIN") as? String{
+                Helpers.database.child("users/\(username)").child("user_playlist").setValue(playlist) {
+                    error, ref in
+                    if let error = error {
+                        print("Data could not be saved: \(error).")
+                        reject(error)
+                    } else {
+                        resolve(true)
                     }
                 }
             }
@@ -41,7 +57,8 @@ class User {
     static func createUser(username: String, password: String)-> Promise<User> {
         return Promise<User> { resolve, reject in
             let object: [String: String] = [
-                "user_password": password
+                "user_password": password,
+                "user_playlist": "",
             ]
             Helpers.database.child("users/\(username)").setValue(object) {
                 error, ref in
@@ -49,7 +66,7 @@ class User {
                     print("Data could not be saved: \(error).")
                     reject(error)
                 } else {
-                    resolve(User(username: username, password: password))
+                    resolve(User(username: username, password: password, playlist: ""))
                 }
             }
         }
@@ -65,7 +82,7 @@ class User {
                 }
                 else if snapshot.exists() {
                     if let value: NSObject = snapshot.value as? NSObject {
-                        user = User(username: username, password: value.value(forKey: "user_password") as! String)
+                        user = User(username: username, password: value.value(forKey: "user_password") as! String, playlist: value.value(forKey: "user_playlist") as! String)
                         resolve(user)
                     }
                 }

@@ -43,18 +43,19 @@ class Video {
                                 // load data item
                                 let videoId = (snippet["resourceId"] as! [String: Any])["videoId"] as! String
                                 let videoTitle = snippet["title"] as! String
-                                let videoAuthor = snippet["videoOwnerChannelTitle"] as! String
                                 
-                                let urlString: String = ((snippet["thumbnails"] as! [String: Any])["high"] as! [String: Any])["url"] as! String
-                                let urlImage: URL = URL(string: urlString)!
-                                do {
-                                    // load image and add video
-                                    let videoImage: Data = try Data(contentsOf: urlImage)
-                                    if let video = Video(videoId: videoId, videoTitle: videoTitle, videoImage: UIImage(data: videoImage), videoAuthor: videoAuthor) {
-                                        Player.videoList.append(video)
+                                if let videoAuthor = snippet["videoOwnerChannelTitle"] {
+                                    let urlString: String = ((snippet["thumbnails"] as! [String: Any])["high"] as! [String: Any])["url"] as! String
+                                    let urlImage: URL = URL(string: urlString)!
+                                    do {
+                                        // load image and add video
+                                        let videoImage: Data = try Data(contentsOf: urlImage)
+                                        if let video = Video(videoId: videoId, videoTitle: videoTitle, videoImage: UIImage(data: videoImage), videoAuthor: videoAuthor as! String) {
+                                            Player.videoList.append(video)
+                                        }
+                                    } catch {
+                                        fatalError("Cannot Load Image")
                                     }
-                                } catch {
-                                    fatalError("Cannot Load Image")
                                 }
                             }
                         }

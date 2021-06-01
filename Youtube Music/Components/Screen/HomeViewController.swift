@@ -23,12 +23,21 @@ class HomeViewController: UIViewController {
         playListId = playListId?.replacingOccurrences(of: "https://youtube.com/playlist?list=", with: "")
         DispatchQueue.global().async {
             let videoList = try! await(Video.loadPlaylistVideo(playlistId: playListId!))
-            DispatchQueue.main.async {
                 if videoList.count > 0 {
-                    self.onMovePlayer()
+                    if !Auth.userLogged.playlist.contains(playListId!) {
+                        let playListIds = Auth.userLogged.playlist + "\(playListId!),"
+                        let _ = try! await(User.updateUserPlaylist(playlist: playListIds))
+                        let _ = try! await(Playlist.loadPlaylistsDetail(playlistIds: playListIds))
+                    }
+                    DispatchQueue.main.async {
+                        self.onMovePlayer()
+                    }
                 } else {
-                    Helpers.showNormalAlert(message: "Đường dẫn không hợp lệ. Vui lòng nhập lại.", view: self)
+                    DispatchQueue.main.async {
+                        Helpers.showNormalAlert(message: "Đường dẫn không hợp lệ. Vui lòng nhập lại.", view: self)
+                    }
                 }
+            DispatchQueue.main.async {
                 self.spinnerLoad.stopAnimating()
             }
         }
@@ -46,7 +55,7 @@ class HomeViewController: UIViewController {
         btnStart.layer.cornerRadius = 10
         
         // Load Playlist
-        let _ = Playlist.loadPlaylistsDetail(playlistIds: "PL8ZKm5nFCZHSugD3_bEfGTuHA1X7nFNmR,PLoFAnSOLY29_ENnCZNOFOgFkGZ2hW_JZs")
+        let _ = Playlist.loadPlaylistsDetail(playlistIds: Auth.userLogged.playlist)
     }
     
 }
