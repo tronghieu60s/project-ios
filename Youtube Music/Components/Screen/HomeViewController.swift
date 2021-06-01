@@ -24,10 +24,12 @@ class HomeViewController: UIViewController {
         DispatchQueue.global().async {
             let videoList = try! await(Video.loadPlaylistVideo(playlistId: playListId!))
                 if videoList.count > 0 {
-                    if !Auth.userLogged.playlist.contains(playListId!) {
-                        let playListIds = Auth.userLogged.playlist + "\(playListId!),"
-                        let _ = try! await(User.updateUserPlaylist(playlist: playListIds))
-                        let _ = try! await(Playlist.loadPlaylistsDetail(playlistIds: playListIds))
+                    if Auth.userLogged.username != nil {
+                        if !Auth.userLogged.playlist.contains(playListId!) {
+                            let playListIds = Auth.userLogged.playlist + "\(playListId!),"
+                            let _ = try! await(User.updateUserPlaylist(playlist: playListIds))
+                            let _ = try! await(Playlist.loadPlaylistsDetail(playlistIds: playListIds))
+                        }
                     }
                     DispatchQueue.main.async {
                         self.onMovePlayer()

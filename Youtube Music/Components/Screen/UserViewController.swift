@@ -15,12 +15,27 @@ class UserViewController: UIViewController {
     @IBOutlet weak var txtOldPass: UITextField!
     @IBOutlet weak var txtNewPass: UITextField!
     @IBOutlet weak var txtReNewPass: UITextField!
+    @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var btnChangePass: UIButton!
+    @IBOutlet weak var lblOldPass: UILabel!
+    @IBOutlet weak var lblNewPass: UILabel!
+    @IBOutlet weak var lblReNewPass: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if Auth.userLogged.username != nil {
             lblUsername.text = "@\(Auth.userLogged.username!)"
+        }
+        else {
+            btnLogout.setTitle("Đăng Nhập Ngay", for: .normal)
+            txtOldPass.isHidden = true
+            txtNewPass.isHidden = true
+            txtReNewPass.isHidden = true
+            btnChangePass.isHidden = true
+            lblOldPass.isHidden = true
+            lblNewPass.isHidden = true
+            lblReNewPass.isHidden = true
         }
         
         txtOldPass.isSecureTextEntry = true
@@ -49,7 +64,7 @@ class UserViewController: UIViewController {
         }
         
         DispatchQueue.global().async {
-            if let username: String = UserDefaults.standard.object(forKey: "ISUSERLOGGEDIN") as? String {
+            if let username: String = Auth.userLogged.username {
                 let encrypt = try! Helpers.encryptString(value: newPass, encryptionKey: "ENCRYPTKEY")
                 let _ = try! await(User.updateUserPassword(pass: encrypt))
                 Auth.userLogged = try! await(User.getUserByUsername(username: username))
