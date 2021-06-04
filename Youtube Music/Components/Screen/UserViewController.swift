@@ -35,8 +35,7 @@ class UserViewController: UIViewController {
         Auth.userLogged = User()
         Auth.playlistList = [Playlist]()
         UserDefaults.standard.set(nil, forKey: "ISUSERLOGGEDIN")
-//        let scrLogin = storyboard?.instantiateViewController(withIdentifier: "ScreenLogin") as! UITabBarController
-//        present(scrLogin, animated: true, completion: nil)
+        self.resetInterface()
     }
     
     func resetInterface () {
