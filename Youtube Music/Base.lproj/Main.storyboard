@@ -399,7 +399,7 @@
         <!--Login View Controller-->
         <scene sceneID="o1i-M9-wNZ">
             <objects>
-                <viewController storyboardIdentifier="ScreenLogin" id="eWm-JN-yXy" customClass="LoginViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eWm-JN-yXy" customClass="LoginViewController" customModule="Youtube_Music" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yzF-Hn-o9R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -546,7 +546,7 @@
         <!--Navigation Controller-->
         <scene sceneID="3Tb-3r-I34">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="USl-B6-7Rk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ScreenLogin" automaticallyAdjustsScrollViewInsets="NO" id="USl-B6-7Rk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CK2-ZE-8ya">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -36,6 +36,7 @@ class UserViewController: UIViewController {
         Auth.playlistList = [Playlist]()
         UserDefaults.standard.set(nil, forKey: "ISUSERLOGGEDIN")
         self.resetInterface()
+        self.onMoveLogin()
     }
     
     func resetInterface () {
@@ -86,5 +87,10 @@ class UserViewController: UIViewController {
         txtOldPass.text = "";
         txtNewPass.text = "";
         txtReNewPass.text = "";
+    }
+    
+    func onMoveLogin(){
+        let scrLogin = storyboard?.instantiateViewController(withIdentifier: "ScreenLogin") as! UINavigationController
+        present(scrLogin, animated: true, completion: nil)
     }
 }
