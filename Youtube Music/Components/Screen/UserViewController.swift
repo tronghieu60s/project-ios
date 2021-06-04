@@ -24,10 +24,27 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.resetInterface()
+        
+        txtOldPass.isSecureTextEntry = true
+        txtNewPass.isSecureTextEntry = true
+        txtReNewPass.isSecureTextEntry = true
+    }
+
+    @IBAction func btnLogoutAction(_ sender: Any) {
+        Auth.userLogged = User()
+        Auth.playlistList = [Playlist]()
+        UserDefaults.standard.set(nil, forKey: "ISUSERLOGGEDIN")
+//        let scrLogin = storyboard?.instantiateViewController(withIdentifier: "ScreenLogin") as! UITabBarController
+//        present(scrLogin, animated: true, completion: nil)
+    }
+    
+    func resetInterface () {
         if Auth.userLogged.username != nil {
             lblUsername.text = "@\(Auth.userLogged.username!)"
         }
         else {
+            lblUsername.text = "Bạn Chưa Đăng Nhập."
             btnLogout.setTitle("Đăng Nhập Ngay", for: .normal)
             txtOldPass.isHidden = true
             txtNewPass.isHidden = true
@@ -37,16 +54,6 @@ class UserViewController: UIViewController {
             lblNewPass.isHidden = true
             lblReNewPass.isHidden = true
         }
-        
-        txtOldPass.isSecureTextEntry = true
-        txtNewPass.isSecureTextEntry = true
-        txtReNewPass.isSecureTextEntry = true
-    }
-
-    @IBAction func btnLogoutAction(_ sender: Any) {
-        Auth.userLogged = User()
-        UserDefaults.standard.set(nil, forKey: "ISUSERLOGGEDIN")
-        navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func btnChangePassAction(_ sender: Any) {

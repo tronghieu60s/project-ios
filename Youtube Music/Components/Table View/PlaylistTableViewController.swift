@@ -48,6 +48,14 @@ class PlaylistTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let playList: Playlist = Auth.playlistList[indexPath.row]
+            let findString = "\(playList.playlistId),"
+            if let indexOf = (Auth.userLogged.playlist as String).range(of: findString) {
+                let substring = Auth.userLogged.playlist[...indexOf.lowerBound] + Auth.userLogged.playlist[indexOf.upperBound...]
+                Auth.userLogged.playlist = String(substring)
+                User.updateUserPlaylist(playlist: String(substring))
+                print("Deleted: \(Auth.userLogged.playlist)")
+            }
             Auth.playlistList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {

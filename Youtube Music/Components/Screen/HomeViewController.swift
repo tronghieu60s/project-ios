@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
                 }
             DispatchQueue.main.async {
                 self.spinnerLoad.stopAnimating()
+                self.txtInput.text = ""
             }
         }
     }

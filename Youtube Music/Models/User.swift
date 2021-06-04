@@ -25,7 +25,7 @@ class User {
     static func updateUserPassword(pass: String)-> Promise<Bool> {
         return Promise<Bool> { resolve, reject in
             if let username: String = UserDefaults.standard.object(forKey: "ISUSERLOGGEDIN") as? String {
-                Helpers.database.child("users").child(username).setValue(["user_password": pass]) {
+                Helpers.database.child("users").child(username).child("user_password").setValue(pass) {
                     error, ref in
                     if let error = error {
                         print("Data could not be saved: \(error).")

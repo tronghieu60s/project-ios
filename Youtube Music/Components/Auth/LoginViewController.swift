@@ -21,7 +21,9 @@ class LoginViewController: UIViewController {
                 let getUser: User = try! await(User.getUserByUsername(username: username))
                 Auth.userLogged = getUser
                 DispatchQueue.main.async {
-                    self.onMoveHome()
+                    if getUser.username != nil {
+                        self.onMoveHome()
+                    }
                 }
             }
         }

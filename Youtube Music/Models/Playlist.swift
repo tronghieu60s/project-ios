@@ -34,8 +34,8 @@ class Playlist {
         let apiKey = Bundle.main.object(forInfoDictionaryKey: "Youtube API Key")
         let url = "https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&maxResults=50&id=\(playlistIds)&key=\(apiKey!)"
         return Promise<[Playlist]> { resolve, reject in
+            Auth.playlistList = [Playlist]()
             DispatchQueue.global().async {
-                Auth.playlistList = [Playlist]()
                 if let response: [String: Any] = try! await(Helpers.getDataFromApi(urlString: url)) as [String: Any] {
                     if let items = response["items"] as? [[String: Any]] {
                         // loop items
