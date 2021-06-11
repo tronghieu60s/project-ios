@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
                             let playListIds = Auth.userLogged.playlist + "\(playListId!),"
                             let _ = try! await(User.updateUserPlaylist(playlist: playListIds))
                             let _ = try! await(Playlist.loadPlaylistsDetail(playlistIds: playListIds))
+                            Auth.userLogged.playlist = playListIds
                         }
                     }
                     DispatchQueue.main.async {

@@ -51,7 +51,7 @@ class PlaylistTableViewController: UITableViewController {
             let playList: Playlist = Auth.playlistList[indexPath.row]
             let findString = "\(playList.playlistId),"
             if let indexOf = (Auth.userLogged.playlist as String).range(of: findString) {
-                let substring = Auth.userLogged.playlist[...indexOf.lowerBound] + Auth.userLogged.playlist[indexOf.upperBound...]
+                let substring = Auth.userLogged.playlist[..<indexOf.lowerBound] + Auth.userLogged.playlist[indexOf.upperBound...]
                 Auth.userLogged.playlist = String(substring)
                 User.updateUserPlaylist(playlist: String(substring))
                 print("Deleted: \(Auth.userLogged.playlist)")
