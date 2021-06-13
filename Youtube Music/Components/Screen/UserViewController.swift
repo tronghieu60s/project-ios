@@ -66,6 +66,10 @@ class UserViewController: UIViewController {
             return Helpers.showNormalAlert(message: "Mật khẩu cũ không chính xác. Vui lòng nhập lại.", view: self)
         }
         
+        if newPass == "" {
+             return Helpers.showNormalAlert(message: "Mật khẩu mới không được để trống. Vui lòng nhập lại.", view: self)
+        }
+        
         if newPass != reNewPass {
             return Helpers.showNormalAlert(message: "Mật khẩu nhập lại không khớp. Vui lòng nhập lại.", view: self)
         }
