@@ -84,7 +84,7 @@ class PlayerViewController: UIViewController {
     
     @IBAction func playStop(sender: UIButton){
         if ytPlayerView.playerState == .playing{
-            ytPlayerView.stopVideo()
+            ytPlayerView.pauseVideo()
             sender.setImage(#imageLiteral(resourceName: "PlayIcon"), for: .normal)
         }else{
             ytPlayerView.playVideo()
